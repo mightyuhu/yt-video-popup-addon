@@ -2,42 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-var targetWindow = null;
-var tabCount = 0;
-
 function start(tab) {
-  chrome.windows.getCurrent(getWindows);
-}
-
-function getWindows(win) {
-  targetWindow = win;
-  chrome.tabs.getAllInWindow(targetWindow.id, getTabs);
-}
-
-function getTabs(tabs) {
-  tabCount = tabs.length;
-  // We require all the tab information to be populated.
-  chrome.windows.getAll({"populate" : true}, moveTabs);
-}
-
-function moveTabs(windows) {
-  var numWindows = windows.length;
-  var tabPosition = tabCount;
-
-  for (var i = 0; i < numWindows; i++) {
-    var win = windows[i];
-
-    if (targetWindow.id != win.id) {
-      var numTabs = win.tabs.length;
-
-      for (var j = 0; j < numTabs; j++) {
-        var tab = win.tabs[j];
-        // Move the tab into the window that triggered the browser action.
-        chrome.tabs.move(tab.id,
-            {"windowId": targetWindow.id, "index": tabPosition});
-        tabPosition++;
-      }
-    }
+  chrome.extension.getBackgroundPage().console.log(tab);
+  var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  var match = tab.url.match(regExp);
+  if (match&&match[2].length==11){
+      chrome.windows.create(
+         {
+          url:'https://youtube.com/watch_popup?v='+match[2],
+          type:'detached_panel'
+         },
+         function(){});
   }
 }
 
