@@ -1,7 +1,7 @@
 {
   "name": "Youtube Fullscreen Window",
-  "version": "0.1",
-  "description": "Removes all junk from the Window and makes the youtube Video Fullscreen. Navigate to a Youtube Page and click the Button to get a separate Youtube Window.",
+  "version": "0.11",
+  "description": "Removes all junk and makes the youtube Video Fullscreen. Navigate to a Youtube Page and click the button to get a new window.",
   "background": {
     "persistent": false,
     "scripts": ["background.js"]
