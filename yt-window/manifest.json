@@ -1,6 +1,6 @@
 {
   "name": "Youtube Fullscreen Window",
-  "version": "0.11",
+  "version": "0.12",
   "description": "Removes all junk and makes the youtube Video Fullscreen. Navigate to a Youtube Page and click the button to get a new window.",
   "background": {
     "persistent": false,
