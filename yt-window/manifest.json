@@ -1,7 +1,7 @@
 {
   "name": "Fullscreen Window for YouTube™",
   "version": "0.13",
-  "description": "Removes all junk and makes the YouTube™ Video Fullscreen. Navigate to a YouTube™ page and click the button of this extension to get a new window.",
+  "description": "Removes junk and makes the YouTube™ Video Fullscreen. Navigate to a YouTube™ video and click the extension-button for a new window.",
   "background": {
     "persistent": false,
     "scripts": ["background.js"]
