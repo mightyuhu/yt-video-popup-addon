@@ -1,7 +1,7 @@
 {
-  "name": "Youtube Fullscreen Window",
-  "version": "0.12",
-  "description": "Removes all junk and makes the youtube Video Fullscreen. Navigate to a Youtube Page and click the button to get a new window.",
+  "name": "Fullscreen Window for YouTube™",
+  "version": "0.13",
+  "description": "Removes all junk and makes the YouTube™ Video Fullscreen. Navigate to a YouTube™ page and click the button of this extension to get a new window.",
   "background": {
     "persistent": false,
     "scripts": ["background.js"]
@@ -9,6 +9,9 @@
   "browser_action": {
     "default_icon": "yt-windowed.png",
     "default_title": "Youtube Panel Window"
+  },
+  "icons":{
+    "128": "yt-windowed.png"
   },
   "permissions": ["tabs"],
   "manifest_version": 2
